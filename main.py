@@ -25,7 +25,8 @@ def analyze_text(text: str) -> dict:
                     "content": f"Analyze this text and return a JSON with these fields: sentiment (positive/negative/neutral), word_count (integer), summary (one sentence).\n\nText: {text}"
                 }
             ],
-            temperature=0.2  # low = more consistent output
+            temperature=0, # low = more consistent output
+            top_p=0.8
         )
 
         # Extract the text content from response
